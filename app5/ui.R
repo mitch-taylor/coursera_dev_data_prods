@@ -5,7 +5,9 @@ shinyUI(fluidPage(
         sidebarPanel(
             sliderInput("sliderMPG", "What is the MPG of the car?", 10, 35, value = 20),
             checkboxInput("showModel1", "Show/Hide Model 1", value = TRUE),
-            checkboxInput("showModel2", "Show/Hide Model 2", value = TRUE)
+            checkboxInput("showModel2", "Show/Hide Model 2", value = TRUE),
+            submitButton("Submit") # submit button added for delayed reactivity
+                # note can be referenced in the server code
         ),
         mainPanel(
             plotOutput("plot1"),

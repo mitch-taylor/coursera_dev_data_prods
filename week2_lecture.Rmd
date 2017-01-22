@@ -1,0 +1,48 @@
+---
+title: "Week 2 Lecture"
+author: "MT"
+date: "January 16, 2017"
+output: ioslides_presentation
+---
+
+Set knitr option to by default not echo code
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Two pound signs creates a new slide
+
+## My New Slide
+Entering some content
+
+***
+Three *'s creates a slide with no title.
+
+## My title using 2 x '#'
+### A top level subheading using 3 x '#'
+#### A second level subheading using 4 x '#'
+
+## Lists
+- item a
+- item b
+1. item a
+2. item b
+
+## Text Options
+Normal text
+*Italicised text*
+**Bold text**
+`for (i %in% 1:10) # code`
+
+## Using R code
+```{r, comment = "", echo = TRUE}
+head(mtcars)
+```
+
+## Slide with Plot
+```{r, fig.align='center', fig.cap="my figure"}
+plot(mtcars$wt, mtcars$mpg, xlab = "Weight", ylab = "MPG")
+```
+
+
+

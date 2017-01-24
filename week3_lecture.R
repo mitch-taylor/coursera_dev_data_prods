@@ -45,7 +45,9 @@ showMethods(show) #s4
 # to view code for a method need getS3method() or getMethod()
 head(getS3method("mean", "default"), 10)
 # rule is to never call methods directly
-
+# creating a new class is done with setClass(), methods with setMethods(), 
+# data elements are called slots. For setmethod need to specify a generic function
+# and a signature(set of classes which are accepted by the method)
 
 
 

@@ -1,0 +1,22 @@
+---
+title: "Week 3 Assignment"
+author: "MT"
+date: "January 24, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(MASS); library(plotly); data("anorexia")
+```
+
+## Plotly
+### Box Plot of MASS anorexia data
+
+```{r}
+anorexia$wt_change <- anorexia$Postwt / anorexia$Prewt - 1
+plot_ly(anorexia, y = wt_change, type = "box", color = Treat) %>%
+    layout(yaxis = list(title = "Percent Weight Change"))
+```
+
+## Thanks

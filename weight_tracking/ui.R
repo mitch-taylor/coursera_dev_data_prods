@@ -5,24 +5,19 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Weight Tracking"),
+  titlePanel("Credit Default Prediction With CART"),
   
   # Sidebar with user input for date and weight
   sidebarLayout(
     sidebarPanel(
-        # date
-        dateInput('date', 'Entry Date (mm-dd-yyyy)', Sys.Date(), 
-                  format = 'mm-dd-yyyy'),
-        # weight
-        numericInput('weight', 'Weight', '', min = 0)
+        # maxdepth
+        sliderInput("depth", "Max Depth:", min=0, max=30, value=3)
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-        # plot
-        plotOutput("distPlot"),
-        # data
-        tableOutput("view")
+        # tree plot
+        plotOutput("distPlot")
     )
   )
 ))

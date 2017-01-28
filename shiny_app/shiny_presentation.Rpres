@@ -1,0 +1,32 @@
+Shiny App Presentation
+========================================================
+author: MT
+date: 28 Jan 2017
+autosize: true
+
+Titanic Data
+========================================================
+The Shiny app utilizes the titanic survival data. A sample is provided below.
+```{r echo = FALSE}
+library(rpart); library(rpart.plot);
+data("ptitanic")
+head(ptitanic)
+```
+
+
+Form of the CART Model
+========================================================
+For this application we fit a basic CART model and allow the user to interactively update the maximum tree depth parameter (input$depth).
+```{r eval=FALSE}
+rpart(survived~., method="class", data=ptitanic, maxdepth = 3)
+```
+
+Application Output
+========================================================
+We then plot the fitted tree for the input depth parameter.
+```{r, echo=FALSE}
+prp(rpart(survived~., method="class", data=ptitanic, maxdepth = 3))
+```
+
+Thank you!
+========================================================
